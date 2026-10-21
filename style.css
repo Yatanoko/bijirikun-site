@@ -99,42 +99,66 @@ main {
 }
 
 /* 画像一覧：4個＋3個、スクロールなし */
+/* キャラクター一覧全体 */
 .search-section {
     width: 90%;
-    max-width: 600px;
+    max-width: 440px;
     margin: 16px auto;
+    padding: 14px;
     border: 2px solid #000;
     border-radius: 24px;
-    overflow: hidden;
-    background: white;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* 見出し：カメラボタンと統一 */
+.search-heading {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+    padding: 12px 24px;
+    border: 2px solid #000;
+    border-radius: 30px;
+    background: #fff;
+    color: #000;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+}
+
+/* 画像2段 */
 .search-grid {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    align-items: center;
+    gap: 8px;
     width: 100%;
-    padding: 6px 10px;
+    padding: 0;
 }
 
+/* 各段を中央揃え */
 .search-row {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 6px;
     width: 100%;
 }
 
+/* キャラクター画像 */
 .search-item {
-    display: block;
     flex: 0 1 calc((100% - 18px) / 4);
-    min-width: 0;
+    width: calc((100% - 18px) / 4);
     aspect-ratio: 1 / 1;
-    height: auto;
-    margin: 0;
+    min-width: 0;
     padding: 0;
     overflow: hidden;
     border: 1px solid #000;
-    background: white;
+    background: #fff;
 }
 
 .search-item img {
@@ -210,70 +234,4 @@ main {
 
 .search-row {
     gap: 8px;
-}
-/* 画像一覧全体の外枠 */
-.search-section {
-    width: 90% !important;
-    max-width: 420px;
-    height: auto !important;
-    margin: 20px auto !important;
-    padding: 12px;
-    border: 2px solid #000;
-    border-radius: 24px;
-    overflow: visible !important;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* 見出し */
-.search-heading {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 12px !important;
-    padding: 10px 24px;
-    border: 2px solid #000;
-    border-radius: 30px;
-    background: #fff;
-    font-size: 20px;
-    text-align: center;
-}
-
-/* 画像一覧 */
-.search-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-    padding: 0 !important;
-}
-
-/* 各段 */
-.search-row {
-    display: flex;
-    justify-content: center !important;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-}
-
-/* 画像 */
-.search-item {
-    flex: 0 1 calc((100% - 24px) / 4);
-    width: calc((100% - 24px) / 4);
-    aspect-ratio: 1 / 1;
-    min-width: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #000;
-    background: #fff;
-}
-
-.search-item img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
