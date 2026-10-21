@@ -211,3 +211,69 @@ main {
 .search-row {
     gap: 8px;
 }
+/* 画像一覧全体の外枠 */
+.search-section {
+    width: 90% !important;
+    max-width: 420px;
+    height: auto !important;
+    margin: 20px auto !important;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 24px;
+    overflow: visible !important;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 見出し */
+.search-heading {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 12px !important;
+    padding: 10px 24px;
+    border: 2px solid #000;
+    border-radius: 30px;
+    background: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* 画像一覧 */
+.search-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    padding: 0 !important;
+}
+
+/* 各段 */
+.search-row {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+/* 画像 */
+.search-item {
+    flex: 0 1 calc((100% - 24px) / 4);
+    width: calc((100% - 24px) / 4);
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+.search-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
