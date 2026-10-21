@@ -360,11 +360,12 @@ main {
 
 #aboutModal img {
     display: block;
-    max-width: 85%;
-    max-height: 80%;
+    width: auto;
+    height: auto;
+    max-width: 85vw;
+    max-height: 75vh;
     object-fit: contain;
 }
-
 #aboutClose {
     position: absolute;
     top: 20px;
