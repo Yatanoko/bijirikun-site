@@ -24,6 +24,7 @@ document.querySelectorAll(".search-item").forEach((item) => {
 });
 
 // 使い方ポップアップ
+console.log("GIFの閉じる処理より前まで読み込みOK");
 const howToButton = document.getElementById("howToButton");
 const howToModal = document.getElementById("howToModal");
 const howToClose = howToModal.querySelector(".close-button");
@@ -44,7 +45,7 @@ const prevSlide = document.getElementById("prevSlide");
 const nextSlide = document.getElementById("nextSlide");
 const slideWindow = document.querySelector(".slide-window");
 
-const totalSlides = 7;
+const totalSlides = 6;
 let currentSlide = 0;
 
 function updateSlide() {
