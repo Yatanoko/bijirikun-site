@@ -93,7 +93,7 @@ main {
 #cameraButton,
 #aboutButton {
     font-size: 24px;
-    padding: 12px 50px;
+    padding: 12px 24px;
     border: 2px solid #000;
     border-radius: 30px;
     background: white;
@@ -220,13 +220,6 @@ main {
 }
 
 
-.whats-section {
-    margin-bottom: 0;
-}
-
-.whats-section nav {
-    text-align: center;
-}
 
 
 #cameraButton,
@@ -234,7 +227,7 @@ main {
     display: block;
     width: fit-content;
     margin: 0 auto;
-    padding: 12px 50px;
+    padding: 12px 24px;
     font-family: inherit;
     font-size: 24px;
     font-weight: normal;
@@ -245,4 +238,28 @@ main {
     color: black;
     appearance: none;
     -webkit-appearance: none;
+}
+
+.whats-section,
+.camera-section {
+    padding: 0;
+    height: auto;
+}
+
+.whats-section nav {
+    margin: 0;
+    padding: 0;
+}
+.whats-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#arScene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
