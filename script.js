@@ -37,3 +37,56 @@ howToButton.addEventListener("click", () => {
 howToClose.addEventListener("click", () => {
     howToModal.style.display = "none";
 });
+// 使い方スライド
+const slideTrack = document.getElementById("slideTrack");
+const slideCounter = document.getElementById("slideCounter");
+const prevSlide = document.getElementById("prevSlide");
+const nextSlide = document.getElementById("nextSlide");
+const slideWindow = document.querySelector(".slide-window");
+
+const totalSlides = 7;
+let currentSlide = 0;
+
+function updateSlide() {
+    slideTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+    prevSlide.disabled = currentSlide === 0;
+    nextSlide.disabled = currentSlide === totalSlides - 1;
+}
+
+prevSlide.addEventListener("click", () => {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+    }
+});
+
+nextSlide.addEventListener("click", () => {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+    }
+});
+
+// スマホの左右スワイプ
+let touchStartX = 0;
+
+slideWindow.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
+
+slideWindow.addEventListener("touchend", (event) => {
+    const touchEndX = event.changedTouches[0].screenX;
+    const distance = touchEndX - touchStartX;
+
+    if (distance < -50 && currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+    } else if (distance > 50 && currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+    }
+}, { passive: true });
+
+updateSlide();
