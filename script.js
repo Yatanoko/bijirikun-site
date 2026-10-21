@@ -22,3 +22,18 @@ document.querySelectorAll(".search-item").forEach((item) => {
         }, 50);
     });
 });
+
+// 使い方ポップアップ
+const howToButton = document.getElementById("howToButton");
+const howToModal = document.getElementById("howToModal");
+const howToClose = howToModal.querySelector(".close-button");
+
+// ボタンを押したら開く
+howToButton.addEventListener("click", () => {
+    howToModal.style.display = "flex";
+});
+
+// ×を押したら閉じる
+howToClose.addEventListener("click", () => {
+    howToModal.style.display = "none";
+});
