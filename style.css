@@ -302,3 +302,48 @@ main {
     line-height: 1.8;
     text-align: left;
 }
+
+/* 使い方スライド */
+.slide-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.slide-window {
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.slide-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide-track img {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.slide-arrow {
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    color: black;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#slideCounter {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+}
