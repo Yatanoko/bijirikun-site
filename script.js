@@ -90,3 +90,8 @@ slideWindow.addEventListener("touchend", (event) => {
 }, { passive: true });
 
 updateSlide();
+// ×でGIFを閉じる
+gifClose.addEventListener("click", () => {
+    gifPopup.style.display = "none";
+    gifImage.src = "";
+});
