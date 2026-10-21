@@ -96,3 +96,18 @@ gifClose.addEventListener("click", () => {
     gifPopup.style.display = "none";
     gifImage.src = "";
 });
+
+// 美尻くんって？ポップアップ
+const aboutButton = document.getElementById("aboutButton");
+const aboutModal = document.getElementById("aboutModal");
+const aboutClose = document.getElementById("aboutClose");
+
+// 開く
+aboutButton.addEventListener("click", () => {
+    aboutModal.style.display = "flex";
+});
+
+// ×で閉じる
+aboutClose.addEventListener("click", () => {
+    aboutModal.style.display = "none";
+});
