@@ -347,3 +347,35 @@ main {
     text-align: center;
     font-size: 14px;
 }
+/* 美尻くんって？ポップアップ */
+#aboutModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+    background: rgba(255, 255, 255, 0.95);
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutModal img {
+    display: block;
+    max-width: 85%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+#aboutClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: transparent;
+    font-size: 56px;
+    line-height: 1;
+    cursor: pointer;
+    color: #000;
+}
