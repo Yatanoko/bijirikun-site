@@ -45,3 +45,6 @@ target.addEventListener("targetFound", () => {
     gifScreen.style.display = "flex";
 });
 
+target.addEventListener("targetLost", () => {
+    gifScreen.style.display = "none";
+});
