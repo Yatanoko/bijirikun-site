@@ -1,60 +1,47 @@
+
 * {
     box-sizing: border-box;
 }
 
-/* =========================
-   サイト全体
-========================= */
-
+html,
 body {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    max-width: 480px;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
-
-/* =========================
-   ボタン共通
-========================= */
+body {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
 
 button {
     font-family: inherit;
     cursor: pointer;
 }
 
-
-/* =========================
-   ヘッダー
-========================= */
-
+/* ヘッダー */
 header {
-    height: 80px;
-
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 20px;
+    padding: 0 12px;
 }
 
 h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 24px;
 }
 
-
-/* =========================
-   メイン
-========================= */
-
+/* メイン画像 */
 main {
     width: 100%;
 }
-
-
-/* =========================
-   メイン画像
-========================= */
 
 .main-image {
     width: 100%;
@@ -63,175 +50,31 @@ main {
 .image-placeholder {
     width: 100%;
     aspect-ratio: 4 / 3;
-
     border: 1px solid #000;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
 
 .main-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
     display: block;
-}
-
-
-
-
-
-/* =========================
-   カメラで探す
-========================= */
-
-#cameraButton,
-#aboutButton {
-    font-size: 24px;
-    padding: 12px 24px;
-    border: 2px solid #000;
-    border-radius: 30px;
-    background: white;
-    cursor: pointer;
-
-}
-
-#cameraButton,
-#aboutButton {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* =========================
-   美九くんを探す部分
-========================= */
-
-.search-section {
-    width: 90%;
-    max-width: 600px;
-
-    height: 250px;
-
-    margin: 20px auto;
-
-    overflow-y: auto;
-
-    border: 1px solid #000;
-}
-
-
-/* =========================
-   10個の四角を並べる場所
-========================= */
-
-.search-grid {
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-
-    padding: 20px;
-}
-
-
-/* =========================
-   4個・3個・3個の段
-========================= */
-
-
-.search-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px;
-}
-
-.search-row {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.search-item {
-    width: calc((100% - 24px) / 3);
-    aspect-ratio: 1 / 1;
-    height: auto;
-    flex-shrink: 1;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #000;
-    background: white;
-}
-
-.search-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-
-/* =========================
-   遊び方ポップアップ
-========================= */
-
-.modal {
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.5);
-
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    position: relative;
-
-    width: 80%;
-    max-width: 500px;
-
-    min-height: 300px;
-
-    background: white;
-
-    padding: 30px;
-}
-
-.close-button {
-    position: absolute;
-
-    top: 10px;
-    right: 10px;
-
-    font-size: 24px;
-
-    background: none;
-    border: none;
-}
-
-
-
-
+/* 説明・カメラボタン */
 #cameraButton,
 #aboutButton {
     display: block;
     width: fit-content;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 12px 24px;
-    font-family: inherit;
-    font-size: 24px;
+    padding: 8px 18px;
+    font-size: 20px;
+    line-height: 1.3;
     font-weight: normal;
-    line-height: normal;
     border: 2px solid #000;
     border-radius: 30px;
     background: white;
@@ -240,21 +83,96 @@ main {
     -webkit-appearance: none;
 }
 
-.whats-section,
-.camera-section {
+.whats-section {
+    margin: 10px 0;
     padding: 0;
-    height: auto;
 }
 
 .whats-section nav {
     margin: 0;
     padding: 0;
 }
-.whats-section {
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+.camera-section {
+    margin: 0;
+    padding: 0;
 }
 
+/* 画像一覧：4個＋3個、スクロールなし */
+.search-section {
+    width: 100%;
+    height: auto;
+    margin: 12px auto 0;
+    padding: 0;
+    overflow: visible;
+    border: none;
+}
+
+.search-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.search-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.search-item {
+    display: block;
+    flex: 0 1 calc((100% - 18px) / 4);
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #000;
+    background: white;
+}
+
+.search-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 遊び方ポップアップ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10002;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    min-height: 300px;
+    background: white;
+    padding: 30px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+}
+
+/* ARカメラ画面 */
 #arScene {
     position: fixed;
     top: 0;
@@ -262,4 +180,11 @@ main {
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+
+#arScene canvas,
+#arScene video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }

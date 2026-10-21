@@ -2,7 +2,6 @@ const cameraButton = document.getElementById("cameraButton");
 const scene = document.getElementById("arScene");
 const target = document.querySelector("[mindar-image-target]");
 
-const backButton = document.getElementById("backButton");
 scene.style.display = "none";
 
 // 認識後にGIFを表示する画面
@@ -26,18 +25,18 @@ gif.style.cssText = "max-width: 100%; max-height: 100%; object-fit: contain;";
 gifScreen.appendChild(gif);
 document.body.appendChild(gifScreen);
 
-// ボタンを押したらカメラを起動
 cameraButton.addEventListener("click", async () => {
     document.querySelector("header").style.display = "none";
-document.querySelector("main").style.display = "none";
+    document.querySelector("main").style.display = "none";
+
     scene.style.display = "block";
     backButton.style.display = "block";
 
     try {
         await scene.systems["mindar-image-system"].start();
     } catch (error) {
-        console.error("カメラを起動できませんでした:", error);
-        alert("カメラを起動できませんでした。カメラの使用を許可してください。");
+        console.error("MindAR起動エラー:", error);
+        alert("カメラを起動できませんでした。ページを再読み込みして、カメラの使用を許可してください。");
     }
 });
 
@@ -46,13 +45,3 @@ target.addEventListener("targetFound", () => {
     gifScreen.style.display = "flex";
 });
 
-backButton.addEventListener("click", () => {
-    scene.systems["mindar-image-system"].stop();
-
-    scene.style.display = "none";
-    backButton.style.display = "none";
-    gifScreen.style.display = "none";
-
-    document.querySelector("header").style.display = "";
-    document.querySelector("main").style.display = "";
-});
