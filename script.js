@@ -2,7 +2,7 @@ const cameraButton = document.getElementById("cameraButton");
 const scene = document.getElementById("arScene");
 const target = document.querySelector("[mindar-image-target]");
 
-scene.style.display = "none";
+
 
 // 認識後にGIFを表示する画面
 const gifScreen = document.createElement("div");
