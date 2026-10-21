@@ -83,26 +83,30 @@ main {
 }
 
 
+
+
+
 /* =========================
    カメラで探す
 ========================= */
 
-.camera-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-#cameraButton {
+#cameraButton,
+#aboutButton {
     font-size: 24px;
-
     padding: 12px 50px;
-
     border: 2px solid #000;
     border-radius: 30px;
-
     background: white;
+    cursor: pointer;
+
 }
 
+#cameraButton,
+#aboutButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* =========================
    美九くんを探す部分
@@ -140,30 +144,36 @@ main {
    4個・3個・3個の段
 ========================= */
 
-.search-row {
+
+.search-grid {
     display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
 }
 
-
-/* =========================
-   キャラクターの四角
-========================= */
+.search-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
 
 .search-item {
-    width: 100px;
-    height: 100px;
-
-    flex-shrink: 0;
-
+    width: calc((100% - 24px) / 3);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    flex-shrink: 1;
+    padding: 0;
+    overflow: hidden;
     border: 1px solid #000;
-
     background: white;
+}
 
-    font-size: 20px;
+.search-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -207,4 +217,13 @@ main {
 
     background: none;
     border: none;
+}
+
+
+.whats-section {
+    margin-bottom: 0;
+}
+
+.whats-section nav {
+    text-align: center;
 }
