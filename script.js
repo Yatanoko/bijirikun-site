@@ -31,6 +31,7 @@ cameraButton.addEventListener("click", async () => {
     document.querySelector("header").style.display = "none";
 document.querySelector("main").style.display = "none";
     scene.style.display = "block";
+    backButton.style.display = "block";
 
     try {
         await scene.systems["mindar-image-system"].start();
@@ -45,3 +46,13 @@ target.addEventListener("targetFound", () => {
     gifScreen.style.display = "flex";
 });
 
+backButton.addEventListener("click", () => {
+    scene.systems["mindar-image-system"].stop();
+
+    scene.style.display = "none";
+    backButton.style.display = "none";
+    gifScreen.style.display = "none";
+
+    document.querySelector("header").style.display = "";
+    document.querySelector("main").style.display = "";
+});
