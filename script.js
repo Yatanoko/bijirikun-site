@@ -48,3 +48,18 @@ target.addEventListener("targetFound", () => {
 target.addEventListener("targetLost", () => {
     gifScreen.style.display = "none";
 });
+
+backButton.addEventListener("click", async () => {
+    try {
+        await scene.systems["mindar-image-system"].stop();
+    } catch (error) {
+        console.error("カメラ停止エラー:", error);
+    }
+
+    gifScreen.style.display = "none";
+    scene.style.display = "none";
+    backButton.style.display = "none";
+
+    document.querySelector("header").style.display = "";
+    document.querySelector("main").style.display = "";
+});
