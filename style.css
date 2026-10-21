@@ -65,7 +65,6 @@ main {
 }
 
 /* 説明・カメラボタン */
-#cameraButton,
 #aboutButton {
     display: block;
     width: fit-content;
