@@ -27,6 +27,8 @@ document.body.appendChild(gifScreen);
 
 // ボタンを押したらカメラを起動
 cameraButton.addEventListener("click", async () => {
+    document.querySelector("header").style.display = "none";
+document.querySelector("main").style.display = "none";
     scene.style.display = "block";
 
     try {
