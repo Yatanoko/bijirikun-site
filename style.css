@@ -200,15 +200,17 @@ main {
 /* ARカメラ画面 */
 #arScene {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000;
+    z-index: 10000;
 }
 
+#arScene .a-canvas,
 #arScene canvas,
 #arScene video {
+    position: fixed !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
