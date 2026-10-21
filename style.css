@@ -196,25 +196,7 @@ main {
     border: none;
 }
 
-/* ARカメラ画面 */
-#arScene {
-    display: none;
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10000;
-}
 
-#arScene .a-canvas,
-#arScene canvas,
-#arScene video {
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-}
 /* 画像一覧の見出し */
 .search-heading {
     width: fit-content;
