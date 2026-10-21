@@ -5,15 +5,20 @@ const gifClose = document.getElementById("gifClose");
 
 // キャラクター画像をタップしたらGIFを表示
 document.querySelectorAll(".search-item").forEach((item) => {
-    item.addEventListener("click", () => {
-        const gifNumber = item.dataset.gif;
-        gifImage.src = `movies/${gifNumber}.gif`;
-        gifPopup.style.display = "flex";
-    });
-});
+    item.addEventListener("click", function (event) {
+        event.preventDefault();
 
-// ×で閉じる
-gifClose.addEventListener("click", () => {
-    gifPopup.style.display = "none";
-    gifImage.src = "";
+        const gifNumber = this.dataset.gif;
+
+        if (!gifNumber) {
+            return;
+        }
+
+        gifImage.src = "";
+        gifPopup.style.display = "flex";
+
+        setTimeout(() => {
+            gifImage.src = `movies/${gifNumber}.gif`;
+        }, 50);
+    });
 });
