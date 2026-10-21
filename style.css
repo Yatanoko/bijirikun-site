@@ -251,3 +251,54 @@ main {
     cursor: pointer;
     color: #000;
 }
+
+/* 使い方ポップアップ */
+#howToModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#howToModal .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px 24px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    color: black;
+    text-align: center;
+}
+
+#howToModal h2 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+#howToModal .close-button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: black;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#howToModal .modal-body {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: left;
+}
